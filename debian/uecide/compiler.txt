@@ -1,5 +1,5 @@
-name=avr-gcc-481
-description=GCC 4.8.1 for AVR
+name=avr-gcc
+description=GCC 4.9.2 for AVR
 version=%VERSION%
 revision=%REVISION%
 family=avr::avrtiny::teensy-avr::avr-cosa

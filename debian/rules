@@ -11,10 +11,10 @@
 
 FILE=unknown
 URL=unknown
-VER=4.8.1
-UVER=481
+VER=4.9.2
+UVER=492
 COMPILER=avr-gcc
-GCCVER=arduino5
+GCCVER=atmel3.5.3-arduino2
 LOGO=Atmel_logo.svg
 
 ifeq (${DEB_HOST_ARCH},linux-amd64)
@@ -86,13 +86,13 @@ override_dh_auto_clean:
 	rm -rf build
 
 override_dh_auto_install:
-	mkdir -p debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}
-	mkdir -p debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons
-	cp -RL build/avr/* debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/
-	cp debian/uecide/compiler.txt debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/
-	convert debian/uecide/${LOGO} -resize 128 -alpha remove -background white debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons/logo128.png
-	convert debian/uecide/${LOGO} -resize 64 -alpha remove -background white debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons/logo64.png
-	convert debian/uecide/${LOGO} -resize 48 -alpha remove -background white debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons/logo48.png
-	convert debian/uecide/${LOGO} -resize 32 -alpha remove -background white debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons/logo32.png
-	convert debian/uecide/${LOGO} -resize 22 -alpha remove -background white debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons/logo22.png
-	convert debian/uecide/${LOGO} -resize 16 -alpha remove -background white debian/${COMPILER}-${UVER}/compilers/${COMPILER}-${UVER}/icons/logo16.png
+	mkdir -p debian/${COMPILER}/compilers/${COMPILER}
+	mkdir -p debian/${COMPILER}/compilers/${COMPILER}/icons
+	cp -RL build/avr/* debian/${COMPILER}/compilers/${COMPILER}/
+	cp debian/uecide/compiler.txt debian/${COMPILER}/compilers/${COMPILER}/
+	convert debian/uecide/${LOGO} -resize 128 -alpha remove -background white debian/${COMPILER}/compilers/${COMPILER}/icons/logo128.png
+	convert debian/uecide/${LOGO} -resize 64 -alpha remove -background white debian/${COMPILER}/compilers/${COMPILER}/icons/logo64.png
+	convert debian/uecide/${LOGO} -resize 48 -alpha remove -background white debian/${COMPILER}/compilers/${COMPILER}/icons/logo48.png
+	convert debian/uecide/${LOGO} -resize 32 -alpha remove -background white debian/${COMPILER}/compilers/${COMPILER}/icons/logo32.png
+	convert debian/uecide/${LOGO} -resize 22 -alpha remove -background white debian/${COMPILER}/compilers/${COMPILER}/icons/logo22.png
+	convert debian/uecide/${LOGO} -resize 16 -alpha remove -background white debian/${COMPILER}/compilers/${COMPILER}/icons/logo16.png
